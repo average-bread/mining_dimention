@@ -1,12 +1,16 @@
 package cursedbread.md;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.type.WorldType;
 import net.minecraft.core.world.type.WorldTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
@@ -53,11 +57,16 @@ public class MiningMain implements ModInitializer, GameStartEntrypoint, RecipeEn
 
 	@Override
 	public void onRecipesReady() {
-
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("GGG", "GDG", "GGG")
+			.addInput('D', Block.stone)
+			.addInput('G', Item.toolPickaxeStone)
+			.create("itemGroupExample", new ItemStack(MiningBlock.portalMining));
 	}
 
 	@Override
 	public void initNamespaces() {
-
+		RecipeBuilder.initNameSpace(MOD_ID);
+		RecipeBuilder.getRecipeNamespace(MOD_ID);
 	}
 }
