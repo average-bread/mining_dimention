@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cursedbread.md.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "DimensionMixin",
+    "EntityPlayerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

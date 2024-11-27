@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "md",
+  "version": "${version}",
+
+  "name": "Mining Dimension",
+  "description": "This mod adds a mining dimension",
+  "authors": [
+    "Bread (with a lot of help)"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+	"icon": "icon.png",
+  "license": "CC0-1.0",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+			"cursedbread.md.MiningMain"
+    ],
+		"beforeGameStart": [
+			"cursedbread.md.MiningMain"
+		],
+		"afterGameStart": [
+			"cursedbread.md.MiningMain"
+		],
+		"recipesReady": [
+			"cursedbread.md.MiningMain"
+		],
+		"terrain-api": [
+			"cursedbread.md.terrainapistuff.TerrainApiStuff"
+		]
+	},
+  "mixins": [
+    "md.mixins.json"
+  ],
+
+  "depends": {
+		"minecraft": "^7.2-beta",
+    "fabricloader": ">=0.15.5",
+		"terrain-api": ">=1.4.4-7.2-pre1"
+  },
+  "suggests": {
+  }
+}
