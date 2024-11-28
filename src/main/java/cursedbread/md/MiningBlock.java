@@ -19,7 +19,7 @@ public class MiningBlock {
 			.setBlockModel(BlockModelStandard::new)
 			.setHardness(-1.0f)
 			.setResistance(-1.0f)
-			.setTextures("minecraft:block/cobbled_stone")
+			.setTextures("minecraft:block/piston_bottom")
 			.setTags(BlockTags.BROKEN_BY_FLUIDS)
 			.build(new BlockPortal("portal.mining",MiningMain.blockId++, MiningMain.dimensionId - 1, Block.stone.id,Block.oreCoalStone.id));
 

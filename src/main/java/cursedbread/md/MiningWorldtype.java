@@ -1,13 +1,12 @@
 package cursedbread.md;
 
+import cursedbread.md.terrainapistuff.ChunkGeneratorFlatMining;
 import net.minecraft.core.world.World;
-import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.biome.provider.BiomeProvider;
 import net.minecraft.core.world.biome.provider.BiomeProviderSingleBiome;
 import net.minecraft.core.world.generate.chunk.ChunkGenerator;
-import net.minecraft.core.world.generate.chunk.flat.ChunkGeneratorFlat;
 import net.minecraft.core.world.type.WorldTypeFlat;
-import net.minecraft.core.world.type.WorldTypeOverworld;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 public class MiningWorldtype extends WorldTypeFlat {
 	public MiningWorldtype(String languageKey) {
@@ -32,5 +31,9 @@ public class MiningWorldtype extends WorldTypeFlat {
 	@Override
 	public float getCloudHeight() {
 		return 256f;
+	}
+
+	private void customChunkGenerator(World world, CallbackInfoReturnable<ChunkGenerator> cir){
+		cir.setReturnValue(new ChunkGeneratorFlatMining(world));
 	}
 }

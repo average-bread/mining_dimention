@@ -1,4 +1,4 @@
-package cursedbread.md;
+package cursedbread.md.terrainapistuff;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.World;
@@ -10,7 +10,7 @@ import net.minecraft.core.world.generate.chunk.flat.ChunkDecoratorFlat;
 public class ChunkGeneratorFlatMining
 	extends ChunkGenerator {
 	public ChunkGeneratorFlatMining(World world) {
-		super(world, new ChunkDecoratorFlat());
+		super(world, new ChunkDecoratorMiningApi(world));
 	}
 
 	@Override
