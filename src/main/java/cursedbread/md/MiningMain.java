@@ -10,6 +10,7 @@ import net.minecraft.core.world.type.WorldType;
 import net.minecraft.core.world.type.WorldTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import turniplabs.halplibe.helper.ModVersionHelper;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
@@ -28,6 +29,13 @@ public class MiningMain implements ModInitializer, GameStartEntrypoint, RecipeEn
 
 	public static int blockId;
 	public static int dimensionId;
+
+	public static boolean nonamedyesOn = ModVersionHelper.isModPresent("nonamedyes");
+	public static boolean randomiteOn = ModVersionHelper.isModPresent("randomite");
+	public static boolean bonusblocksOn = ModVersionHelper.isModPresent("bonusblocks");
+	public static boolean cavecliffOn = ModVersionHelper.isModPresent("cavecliff");
+	public static boolean cosmicOn = ModVersionHelper.isModPresent("cosmic");
+	public static boolean sygnalindustriesOn = ModVersionHelper.isModPresent("signalindustries");
 	static {
 		Properties prop = new Properties();
 		prop.setProperty("starting_block_id","2200");

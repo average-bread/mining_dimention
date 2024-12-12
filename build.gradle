@@ -72,6 +72,14 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
+	ivy {
+		url = "https://github.com/Gooey-Goo"
+		patternLayout {
+			artifact "[organisation]/releases/download/v[revision]/[module]-[revision].jar"
+			m2compatible = true
+		}
+		metadataSources { artifact() }
+	}
 }
 
 dependencies {
@@ -86,6 +94,20 @@ dependencies {
 	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
 
 	modImplementation "ModMenu:ModMenu:${project.mod_menu_version}"
+
+	modImplementation "BTANoNameDyes:noname_dyes:1.3"
+	modImplementation project.files ("build/libs/randomite-2.0.0-7.2.jar")
+	modImplementation project.files ("build/libs/bonusblocks-3.3.0-7.2_01.jar")
+	modImplementation project.files ("build/libs/cavecliff-1.0.1-7.2_01.jar")
+	modImplementation project.files ("build/libs/cosmic-0.0.5.jar")
+	modImplementation project.files ("build/libs/dragonfly-1.6.0-7.2-0.1.jar")
+	//modImplementation project.files ("build/libs/signalindustries-0.17.0-7.2_01.jar")
+	//modImplementation project.files ("build/libs/catalyst-all-1.11.0-7.2_01.jar")
+	//modImplementation project.files ("build/libs/catalyst-core-1.6.0-7.2_01.jar")
+	//modImplementation project.files ("build/libs/catalyst-energy-1.0.14-7.2_01.jar")
+	//modImplementation project.files ("build/libs/catalyst-fluids-1.3.1-7.2_01.jar")
+	//modImplementation project.files ("build/libs/catalyst-multiblocks-1.2.0-7.2_01.jar")
+	//modImplementation project.files ("build/libs/catalyst-multipart-1.0.0-7.2_01.jar")
 
 	modImplementation "com.github.UselessSolutions:TerrainAPI:v${project.terrain_api_version}"
 
